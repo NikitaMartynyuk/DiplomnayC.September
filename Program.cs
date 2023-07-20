@@ -14,22 +14,40 @@ string[] outputArray = GetShortStrings(inputArray);
 Console.WriteLine("Input array: ");
 PrintArray(inputArray);
 
-Console.WriteLine("Output array");
+Console.WriteLine("Output array: ");
 PrintArray(outputArray);
+    
 
-static string[] GetShortStrings(string[] InputArray);
+    static string[] GetShortStrings(string[] inputArray)
 {
     int outputLength = 0;
     for (int i = 0; i < inputArray.Length; i++)
+    {
         if (inputArray[i].Length <= 3)
         {
             outputLength++;
         }
+    }
+
+    string[] outputArray = new string[outputLength];
+    int outputIndex = 0;
+    for (int i = 0; i < inputArray.Length; i++)
+    {
+        if (inputArray[i].Length <= 3)
+        {
+            outputArray[outputIndex] = inputArray[i];
+            outputIndex++;
+        }
+    }
+
+    return outputArray;
 }
 
-string[] outputArray = new string[outputLength];
-int outputIndex = 0 ;
-for (int i = 0; i < inputArray.Legth;i ++)
+static void PrintArray(string[] arr)
 {
-    
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i] + " ");
+    }
+    Console.WriteLine();
 }
