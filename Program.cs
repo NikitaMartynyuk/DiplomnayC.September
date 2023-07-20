@@ -12,4 +12,17 @@ string[] inputArray = { "Hello", "2", "world", ":-)"};
 string[] outputArray = GetShortStrings(inputArray);
 
 Console.WriteLine("Input array: ");
+PrintArray(inputArray);
+
+Console.WriteLine("Output array");
 PrintArray(outputArray);
+
+static string[] GetShortStrings(string[] InputArray);
+{
+    int outputLength = 0 ;
+    for (int i =0; i < inputArray.Length; i ++) 
+                if (InputArray[i].Length <= 3)
+                {
+                    outputLength++ ;
+                }
+}
